@@ -10,7 +10,7 @@ food = (random.randrange(0, w, s), random.randrange(0, h, s))
 direction = (s,0)
 score = 0
 
-while true:
+while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -35,12 +35,11 @@ while true:
         snake.pop()
         
     if new_head[0] < 0 or new_head[0] >= w or new_head[1] < 0 or new_head[1] >= h or new_head in snake [1]:
-        print(f"GAME OVER   
-              score: {score}")
-              pygame.quit()
-              sys.exit()
+        print(f"GAME OVER   score: {score}")
+        pygame.quit()
+        sys.exit()
 
-              screen.fill((0 ,0 ,0))
+        screen.fill((0 ,0 ,0))
     for segment in snake:
         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(segment[0], segment[1], s, s))
         pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(food[0], food[1], s, s))
