@@ -228,7 +228,7 @@ def main():
         pygame.display.flip()
 
         # Beschleunigung mit score increase
-        speed = max(15, 10 + (score1 + score2) // 3)
+        speed = max(10, (score1 + score2) // 3)
         clock.tick(speed)
 
 
