@@ -70,7 +70,7 @@ def place_food(w, h, s, *snakes):
 
 def main():
     pygame.init()
-    w, h, s = 1600, 1200, 20
+    w, h, s = 800, 800, 20
     screen = pygame.display.set_mode((w, h))
     pygame.display.set_caption("SNAKE GAME - Player 1 (Arrows) vs Player 2 (WASD)")
     clock = pygame.time.Clock()
@@ -93,11 +93,11 @@ def main():
                         sys.exit()
 
             screen.fill((10, 10, 30))
-            title = title_font.render("Snake vs Snake", True, (255, 255, 255))
-            instr = font.render("Press SPACE or ENTER to start", True, (200, 200, 200))
-            controls1 = small.render("P1: Arrow keys", True, (180, 255, 180))
-            controls2 = small.render("P2: WASD", True, (180, 180, 255))
-            controls3 = small.render("P: Pause  R: Restart (on game over)  Q: Quit", True, (200, 200, 200))
+            title = title_font.render("Snake vs Snake", True, (382, 382, 382))
+            instr = font.render("Press SPACE or ENTER to start", True, (300, 300, 300))
+            controls1 = small.render("P1: Arrow keys", True, (270, 382, 270))
+            controls2 = small.render("P2: WASD", True, (270, 270, 382))
+            controls3 = small.render("P: Pause  R: Restart (on game over)  Q: Quit", True, (300, 300, 300))
 
             screen.blit(title, (w // 2 - title.get_width() // 2, h // 3 - 50))
             screen.blit(instr, (w // 2 - instr.get_width() // 2, h // 2))
@@ -111,8 +111,8 @@ def main():
     start_menu()  # Call the start menu before entering the game loop
     
     # Initialize snakes and game state
-    snake1 = [(100, 150), (80, 150), (60, 150)]
-    snake2 = [(700, 150), (720, 150), (740, 150)]
+    snake1 = [(150, 225), (120, 225), (90, 250)]
+    snake2 = [(1500, 225), (1080, 225), (1080, 225)]
     food = place_food(w, h, s, snake1, snake2)
     direction1 = (s, 0)
     direction2 = (-s, 0)
@@ -137,8 +137,8 @@ def main():
                         sys.exit()
                     elif event.key == pygame.K_r and game_over:
                         # restart game
-                        snake1 = [(100, 150), (80, 150), (60, 150)]
-                        snake2 = [(700, 150), (720, 150), (740, 150)]
+                        snake1 = [(300, 450), (240, 450), (180, 450)]
+                        snake2 = [(2100, 450), (2160, 450), (2160, 450)]
                         direction1 = (s, 0)
                         direction2 = (-s, 0)
                         score1 = 0
