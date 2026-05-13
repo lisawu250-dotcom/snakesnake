@@ -70,7 +70,7 @@ def place_food(w, h, s, *snakes):
 
 def main():
     pygame.init()
-    w, h, s = 400, 400, 20
+    w, h, s = 1600, 1200, 20
     screen = pygame.display.set_mode((w, h))
     pygame.display.set_caption("SNAKE GAME - Player 1 (Arrows) vs Player 2 (WASD)")
     clock = pygame.time.Clock()
@@ -111,8 +111,8 @@ def main():
     start_menu()  # Call the start menu before entering the game loop
     
     # Initialize snakes and game state
-    snake1 = [(100, 100), (80, 100), (60, 100)]
-    snake2 = [(300, 100), (320, 100), (340, 100)]
+    snake1 = [(100, 150), (80, 150), (60, 150)]
+    snake2 = [(700, 150), (720, 150), (740, 150)]
     food = place_food(w, h, s, snake1, snake2)
     direction1 = (s, 0)
     direction2 = (-s, 0)
@@ -137,8 +137,8 @@ def main():
                         sys.exit()
                     elif event.key == pygame.K_r and game_over:
                         # restart game
-                        snake1 = [(100, 100), (80, 100), (60, 100)]
-                        snake2 = [(300, 100), (320, 100), (340, 100)]
+                        snake1 = [(100, 150), (80, 150), (60, 150)]
+                        snake2 = [(700, 150), (720, 150), (740, 150)]
                         direction1 = (s, 0)
                         direction2 = (-s, 0)
                         score1 = 0
@@ -199,7 +199,7 @@ def main():
         score_text1 = font.render(f"P1: {score1}", True, (0, 255, 0))
         score_text2 = font.render(f"P2: {score2}", True, (0, 0, 255))
         screen.blit(score_text1, (10, 10))
-        screen.blit(score_text2, (w - 150, 10))
+        screen.blit(score_text2, (w - 120, 10))
 
         # If game over, menü
         if game_over:
